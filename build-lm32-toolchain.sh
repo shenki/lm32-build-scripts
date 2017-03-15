@@ -2,29 +2,32 @@
 
 set -e
 
-GMP=gmp-6.1.1
+GMP=gmp-6.1.2
 MPFR=mpfr-3.1.5
 MPC=mpc-1.0.3
-GCC=gcc-6.2.0
-NEWLIB=newlib-2.4.0.20161025
-BINUTILS=binutils-2.27
-GDB=gdb-7.12
+GCC=gcc-6.3.0
+NEWLIB=newlib-2.5.0.20170228
+BINUTILS=binutils-2.28
+GDB=gdb-7.12.1
+
+GNU_MIRROR=https://ftp.gnu.org
+#GNU_MIRROR=http://mirror.internode.on.net/pub
 
 # gmp
-wget -N https://ftp.gnu.org/gnu/gmp/${GMP}.tar.xz
+wget -N $GNU_MIRROR/gnu/gmp/${GMP}.tar.xz
 tar xf ${GMP}.tar.xz
 
 # mpfr
-wget -N https://ftp.gnu.org/gnu/mpfr/${MPFR}.tar.xz
+wget -N $GNU_MIRROR/gnu/mpfr/${MPFR}.tar.xz
 tar xf ${MPFR}.tar.xz
 
 # mpc
-wget -N https://ftp.gnu.org/gnu/mpc/${MPC}.tar.gz
+wget -N $GNU_MIRROR/gnu/mpc/${MPC}.tar.gz
 tar xf ${MPC}.tar.gz
 
 # gcc
 
-wget -N https://ftp.gnu.org/gnu/gcc/${GCC}/${GCC}.tar.bz2
+wget -N $GNU_MIRROR/gnu/gcc/${GCC}/${GCC}.tar.bz2
 tar xf ${GCC}.tar.bz2
 
 # newlib
@@ -32,11 +35,11 @@ wget -N ftp://sourceware.org/pub/newlib/${NEWLIB}.tar.gz
 tar xf ${NEWLIB}.tar.gz
 
 # binutils
-wget -N https://ftp.gnu.org/gnu/binutils/${BINUTILS}.tar.bz2
+wget -N $GNU_MIRROR/gnu/binutils/${BINUTILS}.tar.bz2
 tar xf ${BINUTILS}.tar.bz2
 
 # gdb
-wget -N https://ftp.gnu.org/gnu/gdb/${GDB}.tar.xz
+wget -N $GNU_MIRROR/gnu/gdb/${GDB}.tar.xz
 tar xf ${GDB}.tar.xz
 
 cd ${GCC}
